@@ -8,12 +8,12 @@ const Header = () => {
 	const nav = ["Products", "Quiz", "Testimonials", "Contact", "Shop Now"]
 	
 	return (
-		<div className="backdrop-blur-xs sticky top-0 z-5 flex justify-between items-center pt-1 pr-[2rem] pl-[.5rem] cursor-pointer">
-			<div className="flex items-center">
-				<img className="w-[4rem]  drop-shadow-black" src={logo} alt=""/>
+		<div className="backdrop-blur-xs sticky top-0 z-5 flex justify-between items-center pt-1 pr-[2rem] pl-[.5rem]">
+			<a href="/" className="flex items-center cursor-pointer">
+				<img className="w-[4rem] drop-shadow-black" src={logo} alt=""/>
 				<div className="logo text-3xl -ml-2 text-black lg:text-4xl">Aura</div>
-			</div>
-			<div className="grid gap-2 relative lg:hidden" onClick={() => setActive(!active)}>
+			</a>
+			<div className="grid gap-2 relative cursor-pointer lg:hidden" onClick={() => setActive(!active)}>
 				<div className={clsx("h-[2px] bg-black transition-all duration-500", active? "w-[.5rem]": "w-[2rem]")}></div>
 				<div className={clsx("h-[2px] w-[2rem] bg-black transition duration-500")}></div>
 				<div className={clsx("h-[2px] bg-black transition-all duration-500", active? "w-[1rem]": "w-[2rem]")}></div>
@@ -27,7 +27,7 @@ const Header = () => {
 				{nav.map((val, idx) => {
 					if(val === "Shop Now"){
 						return <motion.a
-							className="bg-amber-500 py-2 px-4 w-fit rounded-2xl"
+							className="bg-amber-500 py-2 px-4 w-fit rounded-2xl cursor-pointer"
 							initial={{ scale: 0.9, opacity: 0 }}
 							animate={{ scale: 1, opacity: 1 }}
 							whileHover={{
@@ -44,7 +44,7 @@ const Header = () => {
 							{val}
 						</motion.a>
 					}
-					return <a key={idx}>{val}</a>
+					return <a className="cursor-pointer" key={idx}>{val}</a>
 				})}
 			</div>
 		
