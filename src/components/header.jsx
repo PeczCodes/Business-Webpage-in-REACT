@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import logo from '../assets/logo.png';
 import clsx from "clsx";
+import {motion} from "framer-motion";
 
 const Header = () => {
 	const [active, setActive] = useState(false);
@@ -10,7 +11,7 @@ const Header = () => {
 		<div className="backdrop-blur-xs sticky top-0 z-5 flex justify-between items-center pt-1 pr-[2rem] pl-[.5rem] cursor-pointer">
 			<div className="flex items-center">
 				<img className="w-[4rem]  drop-shadow-black" src={logo} alt=""/>
-				<div className="logo text-3xl -ml-2 text-black">Aura</div>
+				<div className="logo text-3xl -ml-2 text-black lg:text-4xl">Aura</div>
 			</div>
 			<div className="grid gap-2 relative lg:hidden" onClick={() => setActive(!active)}>
 				<div className={clsx("h-[2px] bg-black transition-all duration-500", active? "w-[.5rem]": "w-[2rem]")}></div>
@@ -22,10 +23,26 @@ const Header = () => {
 					nav.map((val, idx) => <a className={clsx("opacity-0 text-black delay-500 transition-all duration-500", active? "opacity-100 translate-y-0":" translate-y-[-1rem]")} key={idx}>{val}</a>)
 				}
 			</div>
-			<div className="flex gap-6 items-center max-lg:hidden">
+			<div className="nav flex gap-6 items-center max-lg:hidden">
 				{nav.map((val, idx) => {
 					if(val === "Shop Now"){
-						return <a key={idx} className="bg-amber-500 py-2 px-4 w-fit rounded-2xl">{val}</a>
+						return <motion.a
+							className="bg-amber-500 py-2 px-4 w-fit rounded-2xl"
+							initial={{ scale: 0.9, opacity: 0 }}
+							animate={{ scale: 1, opacity: 1 }}
+							whileHover={{
+								scale: 1.1,
+								backgroundColor: '#f59e0b',
+							}}
+							transition={{
+								type: 'spring',
+								stiffness: 400,
+								damping: 10,
+								duration: 5000,
+							}}
+						>
+							{val}
+						</motion.a>
 					}
 					return <a key={idx}>{val}</a>
 				})}
