@@ -17,9 +17,9 @@ const Header = () => {
 				<div className={clsx("h-[2px] w-[2rem] bg-black transition duration-500")}></div>
 				<div className={clsx("h-[2px] bg-black transition-all duration-500", active? "w-[1rem]": "w-[2rem]")}></div>
 			</div>
-			<div className={clsx("bg flex flex-col h-[calc(100vh-5rem)]  transition-transform duration-500 origin-right gap-3 absolute top-[5rem] left-0 min-h-[100%] w-full p-[2rem] items-center shadow-lg overflow-hidden", active ? "scale-x-100" : "scale-x-0")}>
+			<div className={clsx("bg flex flex-col h-[calc(100vh-5rem)] transition-transform duration-500 origin-right gap-3 absolute top-[5rem] left-0 min-h-[100%] w-full p-[2rem] items-center shadow-lg overflow-hidden", active ? "scale-x-100" : "scale-x-0")}>
 				{
-					nav.map((val, idx) => <a className={clsx("opacity-0 text-black transition-all duration-500", active? "opacity-100 translate-y-0":" translate-y-[-1rem]")} key={idx}>{val}</a>)
+					nav.map((val, idx) => <a className={clsx("opacity-0 text-black delay-500 transition-all duration-500", active? "opacity-100 translate-y-0":" translate-y-[-1rem]")} key={idx}>{val}</a>)
 				}
 			</div>
 			<div className="flex gap-6 items-center max-lg:hidden">
