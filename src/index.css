@@ -31,12 +31,7 @@ body {
   padding: 0;
   min-height: 100dvh;
   width: 100%;
-  /*overflow: clip;*/
   font-family: 'Montserrat', sans-serif;
-  /*background: #833AB4;*/
-  /*background: radial-gradient(circle, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);*/
-  /*background: #833AB4;*/
-  /*background: linear-gradient(218deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 31%, rgba(252, 176, 69, 1) 100%);*/
   background: #833AB4;
   background: linear-gradient(218deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 51%, rgba(252, 176, 69, 1) 100%);
   color: black;
@@ -84,19 +79,12 @@ button {
   transition: border-color 0.25s;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-}
-
 .logo {
   font-family: 'Playfair Display', serif;
 }
 .bg {
   backdrop-filter: blur(10px);
-  background: linear-gradient(115deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+  background: linear-gradient(45deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
   /*background-color: #FD2920;*/
 }
 
