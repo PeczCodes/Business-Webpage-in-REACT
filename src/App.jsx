@@ -8,7 +8,7 @@ import Footer from "./components/footer.jsx";
 
 function App() {
     return (
-        <div className="min-h-100vh space-y-10">
+        <div className="space-y-10">
             <motion.div
                 initial={{ y: -50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
